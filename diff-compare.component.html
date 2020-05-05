@@ -1,0 +1,173 @@
+<div class="container container-dimensions">
+  <div *ngIf="(versionList?.length != 0) && (versionList?.length != 1) && !(versionListState.isLoading)" class="row header-row-dimensions">
+    <div class="col-md-8 header-column-dimensions">
+      <div class="row row-override ">
+
+
+        <div class="col-md-2 select-heading-css">
+          Select versions:
+        </div>
+        <div class="col-md-3 ">
+          <div ngbDropdown class="row">
+
+            <div class="col-md-4 col-override version-no">{{(selected?.version0)? selected?.version0:'Version No'}}
+            </div>
+            <div ngbDropdownToggle class="col-md-1 fa fa-angle-down toggler col-override">
+
+            </div>
+            <div *ngIf="versionList?.length != 0" ngbDropdownMenu class="version-list">
+              <div *ngFor="let version of versionList" class="version-element row"
+                (click)="selectVersion(version?.version,'version0')">
+                <div class="created-v-name col-md-6" title="{{version?.version}}">Version : {{version?.version}}</div>
+                <div class="created-v-info col-md-6">Created on&nbsp;:&nbsp;{{version?.createdOn}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-md-1 middle-margin">
+          <div class=" row "> against </div>
+        </div>
+        <div class=" col-md-3 edge-margin">
+          <div ngbDropdown class="row">
+            <div class="col-md-4 col-override version-no">
+              {{(selected?.version1)? selected?.version1:'Version No'}}</div>
+            <div ngbDropdownToggle class="col-md-1 fa fa-angle-down toggler col-override">
+
+            </div>
+            <div *ngIf="versionList?.length != 0" ngbDropdownMenu class="version-list">
+              <div *ngFor="let version of versionList" class="version-element row"
+                (click)="selectVersion(version?.version,'version1')">
+                <div class="created-v-name col-md-6" title="{{version?.version}}">Version : {{version?.version}}</div>
+                <div class="created-v-info col-md-6">Created on&nbsp;:&nbsp;{{version?.createdOn}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-1 header-column-dimensions">
+      <!-- <div class="header-compare-box"> -->
+      <!-- <button class="spacing btn btn-primary pull-right btn-sm" type="submit"
+        [disabled]="!(selected?.version0 && selected?.version1)" (click)="getFieldMappings()">
+        View
+      </button> -->
+      <!-- </div> -->
+
+    </div>
+    <div class="col-md-2 header-column-dimensions">
+      <!-- <div class="header-compare-box"> -->
+      <button class="spacing btn btn-primary pull-left btn-sm" type="submit" [disabled]="!(selected?.version0 && selected?.version1)"
+        (click)="getComparison()">
+        Compare
+      </button>
+      <!-- </div> -->
+
+      <!-- </div>
+        <div class="col-md-1 header-column-dimensions"> -->
+      <!-- <div class="header-compare-box"> -->
+      <button class="spacing btn btn-primary button-margin btn-sm" type="submit" [disabled]="!(isComparisonAvailable)"
+        (click)="isCompare = !(isCompare)">
+        <span *ngIf="isCompare" title="List View" class="fa fa-list"></span>
+        <span *ngIf="!isCompare" title="Tabular View" class="fa fa-table"></span>
+      </button>
+      <!-- </div> -->
+
+    </div>
+  </div>
+  <div *ngIf="!(isCompare) && !(versionList?.length == 0) && (versionList?.length != 1)" class="row body-row-dimensions">
+    <div *ngIf="fieldMapping?.version0.length != 0" class="col-md-6 body-column-dimensions ">
+      <div class="body-compare-box">
+        <div class="row label-version-css">
+          <div class="col-md-3" style="padding: 0px 0px 0px 3px;">
+            Version : {{fieldMapping.version0?.version}}
+          </div>
+          <div class="col-md-3 extra-info">
+            Created on : {{fieldMapping.version0?.createdOn | slice:0:10}}
+          </div>
+          <div class="col-md-3 extra-info">
+            Total records : {{fieldMapping.version0?.totalRecords}}
+          </div>
+          <div *ngIf="comparisonMatrix" class="col-md-3 extra-info">
+            Dropped : {{comparisonMatrix?.DROPPED.length}}
+          </div>
+        </div>
+        <div class="row label-details-css">
+          <div *ngFor="let col of fieldMapping.version0?.listOfFieldMapping"
+            [ngClass]="(col?.action)?col?.action+'-border':''" class="col-md-12 column-css">
+            <div class="displayname pull-left" title="{{col?.displayName}}"> {{col?.displayName}}</div>
+            <div class="badge-coloring badge pull-right"> {{col?.fieldDataType}}</div>
+            <div *ngIf="col?.action" [ngClass]="col?.action" class="badge-coloring badge badge-font-color pull-right">
+              {{col?.action}}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div *ngIf="fieldMapping?.version1.length != 0" class="col-md-6 body-column-dimensions">
+      <div class="body-compare-box">
+        <div class="row label-version-css">
+          <div class="col-md-3" style="padding: 0px 0px 0px 3px;">
+            Version : {{fieldMapping.version1?.version}}
+          </div>
+          <div class="col-md-3 extra-info">
+            Created on : {{fieldMapping.version1?.createdOn | slice:0:10}}
+          </div>
+          <div class="col-md-3 extra-info">
+            Total records : {{fieldMapping.version1?.totalRecords}}
+          </div>
+          <div *ngIf="comparisonMatrix" class="col-md-3 extra-info">
+            Added : {{comparisonMatrix?.ADDED.length}} &nbsp;Modified : {{comparisonMatrix?.MODIFIED.length}}
+          </div>
+        </div>
+        <div class="row label-details-css">
+          <div *ngFor="let col of fieldMapping.version1?.listOfFieldMapping"
+            [ngClass]="(col?.action)?col?.action+'-border':''" class="col-md-12 column-css">
+            <div class="displayname pull-left" title="{{col?.displayName}}"> {{col?.displayName}}</div>
+            <div class="badge-coloring badge pull-right"> {{col?.fieldDataType}}</div>
+            <div *ngIf="col?.action" [ngClass]="col?.action" class="badge-coloring badge badge-font-color pull-right">
+              {{col?.action}}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div *ngIf="(isCompare) && !(versionList?.length == 0) && (versionList?.length != 1)" class="row body-row-dimensions">
+    <div *ngIf="comparisonMatrix" class="col-md-12 body-column-dimensions">
+      <div class="body-compare-box">
+        <div class="row comparison-css">
+          <div class="col-md-2 action-tabs-css">
+            <div *ngFor="let action of comparisonMatrix | keyvalue" class="action-css"
+              (click)="selectAction(action.key)">
+              {{action.key}}
+            </div>
+          </div>
+          <div class="col-md-10">
+            <div class="row selected-action">{{selectedAction?.name}}</div>
+            <div class="selected-list-css">
+              <div *ngFor="let elem of selectedAction?.list " class="row element">
+                <div class="col-md-8 elem-overflow" title="{{elem?.fieldName}}">{{elem?.fieldName}}</div>
+                <div class="col-md-2 elem-type">{{elem?.fieldDefinition}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div *ngIf="(versionList?.length == 0 || versionList?.length == 1) && !(versionListState.isLoading)" class="row body-row-dimensions">
+    <div class="col-md-12 body-column-dimensions text-css ">
+      <!-- <div class="body-compare-box"> -->
+      <h6 class="no-data-msg" style="font-size: 1.75rem;"> No Lineage Available</h6>
+      <!-- </div> -->
+
+    </div>
+  </div>
+
+</div>
