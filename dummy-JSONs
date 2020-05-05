@@ -1,0 +1,235 @@
+/* Dummy response JSONs */
+
+/* Versions List api/v1/datasource/a8c17d99-fd28-4c9f-a40b-31ccd2e38c81/versions */
+
+  /* Sample 1 */
+  
+    [
+      {
+        "version": "1",
+        "createdOn": "2020-04-28 05:28:09.0"
+      },
+      {
+        "version": "2",
+        "createdOn": "2020-04-28 05:32:18.0"
+      },
+      {
+        "version": "3",
+        "createdOn": "2020-04-28 05:33:51.0"
+      },
+      {
+        "version": "4",
+        "createdOn": "2020-04-28 05:52:06.0"
+      },
+      {
+        "version": "5",
+        "createdOn": "2020-04-28 05:59:44.0"
+      }
+    ]
+    
+    
+ /* Fiel Mappings */
+ 
+  /* Sample 1 api/v1/datasource/a8c17d99-fd28-4c9f-a40b-31ccd2e38c81/version/1/fieldmapping */
+  
+    {
+      "id": "7fa9e774-1e84-433c-985d-fa1cfc25dd2a",
+      "dataSourceId": "a8c17d99-fd28-4c9f-a40b-31ccd2e38c81",
+      "listOfFieldMapping": [
+        {
+          "fieldMappingId": "1c4b5388-48e2-4cab-8a81-515b9fd00e28",
+          "name": "PersonID",
+          "position": "0",
+          "isPrimaryKey": false,
+          "fieldDataType": "INTEGER",
+          "createdOn": "2020-04-28T05:28:09.000+0000",
+          "updatedOn": "2020-04-28T05:28:09.000+0000",
+          "displayName": "PersonID",
+          "active": false,
+          "deleted": false
+        },
+        {
+          "fieldMappingId": "f2fec4d9-e8c1-4d55-8b75-c4b6ff6c21d8",
+          "name": "LastName",
+          "position": "1",
+          "isPrimaryKey": false,
+          "fieldDataType": "STRING",
+          "createdOn": "2020-04-28T05:28:09.000+0000",
+          "updatedOn": "2020-04-28T05:28:09.000+0000",
+          "displayName": "LastName",
+          "active": false,
+          "deleted": false
+        },
+        {
+          "fieldMappingId": "db10ef67-88cc-4fc5-b514-caba864427ca",
+          "name": "FirstName",
+          "position": "2",
+          "isPrimaryKey": false,
+          "fieldDataType": "STRING",
+          "createdOn": "2020-04-28T05:28:09.000+0000",
+          "updatedOn": "2020-04-28T05:28:09.000+0000",
+          "displayName": "FirstName",
+          "active": false,
+          "deleted": false
+        },
+        {
+          "fieldMappingId": "bc9e62af-2f22-4727-8eca-5bb127742e88",
+          "name": "Address",
+          "position": "3",
+          "isPrimaryKey": false,
+          "fieldDataType": "STRING",
+          "createdOn": "2020-04-28T05:28:09.000+0000",
+          "updatedOn": "2020-04-28T05:28:09.000+0000",
+          "isPii": false,
+          "displayName": "Address",
+          "active": false,
+          "deleted": false
+        },
+        {
+          "fieldMappingId": "ccf6aae9-973a-4e90-8735-049357cc9df6",
+          "name": "City",
+          "position": "4",
+          "isPrimaryKey": false,
+          "fieldDataType": "STRING",
+          "createdOn": "2020-04-28T05:28:09.000+0000",
+          "updatedOn": "2020-04-28T05:28:09.000+0000",
+          "displayName": "City",
+          "active": false,
+          "deleted": false
+        }
+      ],
+      "version": 1,
+      "createdOn": "2020-04-28T05:28:09.000+0000",
+      "totalRecords": 1
+      }
+      
+    /* Sample 2 api/v1/datasource/a8c17d99-fd28-4c9f-a40b-31ccd2e38c81/version/3/fieldmapping */
+    
+    {
+    "id": "25a5dc71-12b7-423d-91bc-1cad2abf3430",
+    "dataSourceId": "a8c17d99-fd28-4c9f-a40b-31ccd2e38c81",
+    "listOfFieldMapping": [
+      {
+        "fieldMappingId": "700a261d-7f61-46b4-bff7-99fea5881017",
+        "name": "PersonID",
+        "position": "0",
+        "isPrimaryKey": false,
+        "fieldDataType": "INTEGER",
+        "createdOn": "2020-04-28T05:33:51.000+0000",
+        "updatedOn": "2020-04-28T05:33:51.000+0000",
+        "displayName": "PersonID",
+        "active": false,
+        "deleted": false
+      },
+      {
+        "fieldMappingId": "82acc44e-eb99-43b4-b731-ba848654acad",
+        "name": "LastName",
+        "position": "1",
+        "isPrimaryKey": false,
+        "fieldDataType": "STRING",
+        "createdOn": "2020-04-28T05:33:51.000+0000",
+        "updatedOn": "2020-04-28T05:33:51.000+0000",
+        "displayName": "LastName",
+        "active": false,
+        "deleted": false
+      },
+      {
+        "fieldMappingId": "168e26c3-a569-488a-a43f-468388df9ba1",
+        "name": "FirstName",
+        "position": "2",
+        "isPrimaryKey": false,
+        "fieldDataType": "STRING",
+        "createdOn": "2020-04-28T05:33:51.000+0000",
+        "updatedOn": "2020-04-28T05:33:51.000+0000",
+        "displayName": "FirstName",
+        "active": false,
+        "deleted": false
+      },
+      {
+        "fieldMappingId": "2f1d6d11-b26d-4735-9d2c-14234ba029c2",
+        "name": "Address",
+        "position": "3",
+        "isPrimaryKey": false,
+        "fieldDataType": "STRING",
+        "createdOn": "2020-04-28T05:33:51.000+0000",
+        "updatedOn": "2020-04-28T05:33:51.000+0000",
+        "displayName": "Address",
+        "active": false,
+        "deleted": false
+      },
+      {
+        "fieldMappingId": "94b44268-fa44-4029-ba89-4fdc13074ea8",
+        "name": "City",
+        "position": "4",
+        "isPrimaryKey": false,
+        "fieldDataType": "STRING",
+        "createdOn": "2020-04-28T05:33:51.000+0000",
+        "updatedOn": "2020-04-28T05:33:51.000+0000",
+        "docData": null,
+        "displayName": "City",
+        "active": false,
+        "deleted": false
+      },
+      {
+        "fieldMappingId": "dfab5da8-d67c-4c43-b489-a3899a28c354",
+        "name": "Email",
+        "position": "5",
+        "isPrimaryKey": false,
+        "fieldDataType": "STRING",
+        "createdOn": "2020-04-28T05:33:51.000+0000",
+        "updatedOn": "2020-04-28T05:33:51.000+0000",
+        "displayName": "Email",
+        "active": false,
+        "deleted": false
+      },
+      {
+        "fieldMappingId": "3bce54a6-fabd-43b1-afa1-963868235da3",
+        "name": "DateOfBirth",
+        "position": "6",
+        "isPrimaryKey": false,
+        "fieldDataType": "DATE",
+        "createdOn": "2020-04-28T05:33:51.000+0000",
+        "updatedOn": "2020-04-28T05:33:51.000+0000",
+        "docData": null,
+        "displayName": "DateOfBirth",
+        "active": false,
+        "deleted": false
+      }
+    ],
+    "version": 3,
+    "createdOn": "2020-04-28T05:33:51.000+0000",
+    "totalRecords": 1
+    }
+    
+/* Compare JSON */
+  
+  /* Sample 1 api/v1/datasource/a8c17d99-fd28-4c9f-a40b-31ccd2e38c81/compare/1/5/fieldmapping */
+    
+        {
+          "ADDED": [
+            {
+              "fieldName": "DateOfBirth",
+              "fieldDefinition": "DATE"
+            },
+            {
+              "fieldName": "Email",
+              "fieldDefinition": "STRING"
+            },
+            {
+              "fieldName": "First Name",
+              "fieldDefinition": "STRING"
+            }
+          ],
+          "DROPPED": [
+            {
+              "fieldName": "Address",
+              "fieldDefinition": "STRING"
+            },
+            {
+              "fieldName": "FirstName",
+              "fieldDefinition": "STRING"
+            }
+          ],
+          "MODIFIED": []
+        }
+    
